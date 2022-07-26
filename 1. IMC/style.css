@@ -51,7 +51,6 @@ fieldset {
 }
 
 .input-group {
-  min-width: ;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
@@ -94,12 +93,13 @@ button:hover {
 }
 
 .result-title {
+  font-family: Lato, Helvetica, sans-serif;
   text-align: center;
   font-size: 35px;
   font-weight: 400;
 }
 
 .result-text {
-  font-family: Raleway, Helvetica, sans-serif;
+  text-align: center;
   font-weight: 200;
 }
