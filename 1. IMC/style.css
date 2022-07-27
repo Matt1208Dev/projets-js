@@ -15,7 +15,7 @@ body {
 
 .calculator {
   background-color: #f1f1f1;
-  width: 50%;
+  max-width: 850px;
   margin: 0 auto;
   border: 1px solid gray;
   border-radius: 5px;
@@ -53,6 +53,7 @@ fieldset {
 .input-group {
   display: flex;
   flex-direction: column;
+  padding: 0 10px;
   margin-bottom: 10px;
 }
 
@@ -63,12 +64,11 @@ fieldset {
 }
 
 input {
-  width: 250px;
+  min-width: 250px;
   height: 30px;
   border-radius: 3px;
   border: none;
   padding: 5px;
-  margin-right: 15px;
   box-shadow: 0px 0px 3px #000;
 }
 
@@ -102,4 +102,20 @@ button:hover {
 .result-text {
   text-align: center;
   font-weight: 200;
+}
+
+@media (max-width: 600px) {
+  .input-group {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+    min-width: auto;
+    margin: 0;
+  }
+
+  .calculator {
+    padding: 5px;
+  }
 }

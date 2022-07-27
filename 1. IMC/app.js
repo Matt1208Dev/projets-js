@@ -13,29 +13,41 @@ const submit = document.querySelector('button');
 const result = document.querySelector('.result-title');
 const message = document.querySelector('.result-text');
 
-submit.addEventListener('click', function(e) {
+submit.addEventListener('click', function (e) {
   e.preventDefault();
-  
+
   // Valider la saisie
   if ((height.value === "" || weight.value === "") || (height.value <= 0 || weight.value <= 0)) {
-    result.innerHTML = "Oups !";
-    message.innerHTML = "Remplissez correctement les champs";
-  } else {
-    
-    // Calculer l'IMC
-    // IMC = poids en kg / taille² en m
-    IMC = Math.round((weight.value / ((height.value / 100) * (height.value / 100 ))) * 10) / 10;
 
-    // Déterminer le rang à partir de BMIData et afficher le résultat à l'utilisateur.
-    for (rank of BMIData) {
-      if ((IMC >= rank.range[0] && IMC <= rank.range[1]) || IMC > rank.range) {
-        
-        result.style.color = rank.color;
-        result.innerHTML = IMC;
-        message.innerHTML = `Résultat : ${rank.name}`;
-      }
+    handleError();
+    return;
+  }
+    
+  calculateBMI();
+
+  });
+
+function handleError() {
+  result.innerHTML = "Oups !";
+  message.innerHTML = "Remplissez correctement les champs";
+}
+
+function calculateBMI() {
+  // BMI = poids en kg / taille² en m
+  const BMI = (weight.value / Math.pow(height.value / 100, 2)).toFixed(1);
+
+  showResult(BMI);
+  
+}
+
+function showResult(BMI) {
+  // Déterminer le rang à partir de BMIData et afficher le résultat à l'utilisateur.
+  for (rank of BMIData) {
+    if ((BMI >= rank.range[0] && BMI <= rank.range[1]) || BMI > rank.range) {
+
+      result.style.color = rank.color;
+      result.innerHTML = BMI;
+      message.innerHTML = `Résultat : ${rank.name}`;
     }
   }
-
-
-});
+}
