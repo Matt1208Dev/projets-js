@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quizz JS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Quizz <span>Culture générale.</span> ☑️</h1>
+
+    <form>
+      <div class="inputs-group">
+        <div class="input-group">
+          <p for="question-1">Qui est sacré empereur de France le 2 décembre 1804 ?</p>
+          <div class="input-group-radio">
+            <input type="radio" name="question-1" id="choice1A" value="a">
+            <label for="choice1A">Clovis</label>
+          </div>
+          <div class="input-group-radio">
+            <input type="radio" name="question-1" id="choice1B" value="b">
+            <label for="choice1B">Abraham Lincoln</label>
+          </div>
+          <div class="input-group-radio">
+            <input type="radio" name="question-1" id="choice1C" value="c">
+            <label for="choice1C">Napoléon Bonaparte</label>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <p for="question-2">Quand la déclaration d'Indépendance des États-Unis a-t-elle été votée ?</p>
+          <div class="input-group-radio">
+            <input type="radio" name="question-2" id="choice2A" value="a">
+            <label for="choice2A">4 juillet 1776</label>
+          </div>
+          <div class="input-group-radio">
+            <input type="radio" name="question-2" id="choice2B" value="b">
+            <label for="choice2B">18 avril 1856</label>
+          </div>
+          <div class="input-group-radio">
+            <input type="radio" name="question-2" id="choice2C" value="c">
+            <label for="choice2C">30 juin 1925</label>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <p for="question-3">Quand a eu lieu la chute de l'empire romain d'occident ?</p>
+          <div class="input-group-radio">
+            <input type="radio" name="question-3" id="choice3A" value="a">
+            <label for="choice3A">15 ap. J.C</label>
+          </div>
+          <div class="input-group-radio">
+            <input type="radio" name="question-3" id="choice3B" value="b">
+            <label for="choice3B">476 ap. J.C</label>
+          </div>
+          <div class="input-group-radio">
+            <input type="radio" name="question-3" id="choice3C" value="c">
+            <label for="choice3C">-740 av J.C</label>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <p for="question-4">Quel est la capitale de la Slovénie ?</p>
+          <div class="input-group-radio">
+            <input type="radio" name="question-4" id="choice4A" value="a">
+            <label for="choice4A">Ljubljana</label>
+          </div>
+          <div class="input-group-radio">
+            <input type="radio" name="question-4" id="choice4B" value="b">
+            <label for="choice4B">Belgrade</label>
+          </div>
+          <div class="input-group-radio">
+            <input type="radio" name="question-4" id="choice4C" value="c">
+            <label for="choice4C">Bratislava</label>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <p for="question-5">Combien d'habitants compte l'Irlande en 2020 ?</p>
+          <div class="input-group-radio">
+            <input type="radio" name="question-5" id="choice5A" value="a">
+            <label for="choice5A">1,365 Million</label>
+          </div>
+          <div class="input-group-radio">
+            <input type="radio" name="question-5" id="choice5B" value="b">
+            <label for="choice5B">21 Millions</label>
+          </div>
+          <div class="input-group-radio">
+            <input type="radio" name="question-5" id="choice5C" value="c">
+            <label for="choice5C">4,9 Millions</label>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit">VALIDER ✔️</button>
+    </form>
+
+    <div class="info">
+      Cliquer sur <span>valider</span> pour voir les <span>résultats</span>.
+    </div>
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>

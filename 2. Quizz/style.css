@@ -1,0 +1,107 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Open sans, sans-serif;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  padding: clamp(20px, 5vw, 50px) 20px 10px;
+}
+
+.container {
+  width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h1 span {
+  font-weight: 200;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputs-group {
+  width: 100%;
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+}
+
+.input-group p {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.input-group-radio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.input-group-radio label {
+  margin-left: 10px;
+}
+
+button {
+  padding: 10px 30px;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin: 10px auto;
+}
+
+.info {
+  width: 100%;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 10px;
+  margin: 10px 0px;
+}
+
+.info span {
+  font-weight: 700;
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 650px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: auto;
+  }
+}

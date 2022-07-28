@@ -22,10 +22,10 @@ submit.addEventListener('click', function (e) {
     handleError();
     return;
   }
-    
+
   calculateBMI();
 
-  });
+});
 
 function handleError() {
   result.innerHTML = "Oups !";
@@ -37,7 +37,7 @@ function calculateBMI() {
   const BMI = (weight.value / Math.pow(height.value / 100, 2)).toFixed(1);
 
   showResult(BMI);
-  
+
 }
 
 function showResult(BMI) {
