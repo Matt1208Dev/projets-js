@@ -80,6 +80,11 @@ button {
   margin: 10px auto;
 }
 
+button:hover {
+  background-color: #eee8e8;
+  cursor: pointer;
+}
+
 .info {
   width: 100%;
   background-color: #f1f1f1;
