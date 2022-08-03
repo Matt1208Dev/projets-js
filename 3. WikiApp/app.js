@@ -1,6 +1,7 @@
 // API ENDPOINT : `https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&origin=*&srlimit=20&srsearch=${searchInput}`
 
 const input = document.querySelector('input');
+const loader = document.querySelector('.loader');
 
 // Ecouteur d'évènement sur l'élément input
 input.addEventListener('input', handleForm);
@@ -8,18 +9,31 @@ input.addEventListener('input', handleForm);
 function handleForm(e) {
     const searchInput = e.target.value;
 
-    fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&origin=*&srlimit=20&srsearch=${searchInput}`)
-        .then(response => response.json())
-        .then(data => showResults(data));
+    loader.style.display = "flex";
+
+    if (searchInput) {
+
+        fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&origin=*&srlimit=20&srsearch=${searchInput}`)
+            .then(response => response.json())
+            .then(data => showResults(data))
+            .catch(function (error) {
+                console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
+            });
+    } else {
+        const results = document.querySelector('.results');
+        eraseResults();
+        loader.style.display = "none";
+    }
+
+    // loader.style.display = "none";
 }
 
 function showResults(data) {
 
     const arrResults = data.query.search;
-
-    // Sélection et effacement du contenu du conteneur des résultats
     const results = document.querySelector('.results');
-    results.innerHTML = "";
+    // Effacement des résultats
+    eraseResults();
 
     // Boucle de création des cartes de résultats
     arrResults.forEach((result, index) => {
@@ -47,4 +61,10 @@ function showResults(data) {
 
         // console.log(arrResults[index].pageid);
     });
+    loader.style.display = "none";
+}
+
+function eraseResults() {
+    const results = document.querySelector('.results');
+    results.innerHTML = "";
 }
