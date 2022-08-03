@@ -68,6 +68,10 @@ input:focus {
   
 }
 
+.error-msg {
+  color: gray;
+}
+
 .results {
   width: 80%;
 }
