@@ -12,34 +12,73 @@ function createCookie() {
     const cookieName = document.querySelector('#cookie-name');
     const cookieValue = document.querySelector('#cookie-value');
 
+    // Gestion des erreurs par absence de saisie utilisateur
     const cookieNameErrorMsg = cookieName.nextElementSibling;
     const cookieValueErrorMsg = cookieValue.nextElementSibling;
 
-    if(!cookieName.value) {
+    if (!cookieName.value) {
         cookieNameErrorMsg.innerHTML = "Le champ n'est pas rempli !";
     } else {
         cookieNameErrorMsg.innerHTML = "";
     }
 
-    if(!cookieValue.value) {
+    if (!cookieValue.value) {
         cookieValueErrorMsg.innerHTML = "Le champ n'est pas rempli !";
         return;
     } else {
         cookieValueErrorMsg.innerHTML = "";
     }
 
-    if(!cookieName.value || !cookieValue.value) {
+    if (!cookieName.value || !cookieValue.value) {
         return;
     } else {
-        // Création du cookie avec les valeurs récupérées des inputs
-        document.cookie = `${cookieName.value}=${cookieValue.value}`;
-    
-        // Effacement des valeurs d'inputs et messages d'erreurs
-        cookieName.value = "";
-        cookieValue.value = "";
-        cookieNameErrorMsg.innerHTML = "";
-        cookieValueErrorMsg.innerHTML = "";
+        // On récupère le tableau des cookies
+        const allCookies = getAllCookies();
+
+        // On boucle dans celui-ci à la recherche d'un cookie du même nom
+        if (!allCookies) {
+
+            // Création du cookie avec les valeurs récupérées des inputs
+            document.cookie = `${cookieName.value}=${cookieValue.value}`;
+
+            // Affichage de la notification
+            displayMessage('created', cookieName.value);
+
+            // Effacement des valeurs d'inputs et messages d'erreurs
+            form.reset();
+            // cookieName.value = "";
+            // cookieValue.value = "";
+            cookieNameErrorMsg.innerHTML = "";
+            cookieValueErrorMsg.innerHTML = "";
+
+        } else {
+
+            allCookies.forEach(el => {
+                if (el.includes(cookieName.value)) {
+                    // Modification du cookie avec les valeurs récupérées des inputs
+                    document.cookie = `${encodeURIComponent(cookieName.value)}=${encodeURIComponent(cookieValue.value)}`;
+
+                    // Affichage de la notification
+                    displayMessage('updated', cookieName.value);
+
+                } else {
+                    // Création du cookie avec les valeurs récupérées des inputs
+                    document.cookie = `${encodeURIComponent(cookieName.value)}=${encodeURIComponent(cookieValue.value)}`;
+
+                    // Affichage de la notification
+                    displayMessage('created', cookieName.value);
+                }
+
+                // Effacement des valeurs d'inputs et messages d'erreurs
+                form.reset();
+                // cookieName.value = "";
+                // cookieValue.value = "";
+                cookieNameErrorMsg.innerHTML = "";
+                cookieValueErrorMsg.innerHTML = "";
+            })
+        }
     }
+
 }
 
 function getAllCookies() {
@@ -90,8 +129,7 @@ function showCookies() {
         card.appendChild(closeBtn);
         cookieContainer.appendChild(card);
 
-        // const closeButtons = document.querySelectorAll('.close-btn');
-        
+        // Ecouteur d'évènement pour la suppression d'un cookie
         closeBtn.addEventListener('click', (e) => { deleteCookie(e) });
     }
 }
@@ -108,13 +146,44 @@ function deleteCookie(e) {
 
     // On boucle dans celui-ci à la recherche d'un cookie du même nom afin de le supprimer
     allCookies.forEach(el => {
-        if(el.includes(cookieKey)) {
+        if (el.includes(cookieKey)) {
             document.cookie = `${cookieKey}="";expires=Thu, 01 Jan 1970 00:00:00 UTC`;
 
             cookieCard.remove();
+
+            // Affichage de la notification
+            displayMessage('deleted', cookieKey);
         }
     })
 }
 
-// effacement cookie 
-// expires=Thu, 01 Jan 1970 00:00:00 UTC
+const messagesContainer = document.querySelector('.messages-container');
+
+function displayMessage(message, cookieName) {
+
+    const msgBox = document.createElement('div');
+    msgBox.className = "message-box";
+
+    switch (message) {
+        case 'created':
+            msgBox.textContent = `Cookie ${cookieName} créé.`;
+            msgBox.style.backgroundColor = "blue";
+            break;
+
+        case 'updated':
+            msgBox.textContent = `Cookie ${cookieName} modifié.`;
+            msgBox.style.backgroundColor = "orange";
+            break;
+
+        case 'deleted':
+            msgBox.textContent = `Cookie ${cookieName} supprimé.`;
+            msgBox.style.backgroundColor = "red";
+            break;
+
+        default:
+            'situation inattendue';
+    }
+
+    messagesContainer.appendChild(msgBox);
+    setTimeout(() => { msgBox.remove() }, 2500);
+}
