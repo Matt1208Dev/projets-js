@@ -132,18 +132,17 @@ input {
 
 .message-container {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    bottom: 20px;
+    right: 20px;
 }
 
 /* Message Box */
 .message-box {
-    text-align: end;
-    width: fit-content;
     color: #ffffff;
     font-size: 16px;
     padding: 10px 15px;
     margin: 10px 0;
     border-radius: 5px;
+    min-width: 150px;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }

@@ -144,24 +144,32 @@ function deleteCookie(e) {
     // On récupère le tableau des cookies
     const allCookies = getAllCookies();
 
+    document.cookie = `${cookieKey}=; expires=${new Date(0).toUTCString()}`;
+
+    cookieCard.remove();
+
+    // Affichage de la notification
+    displayMessage('deleted', cookieKey);
+
+    
     // On boucle dans celui-ci à la recherche d'un cookie du même nom afin de le supprimer
-    allCookies.forEach(el => {
-        if (el.includes(cookieKey)) {
-            document.cookie = `${cookieKey}="";expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+    // allCookies.forEach(el => {
+    //     if (el.includes(cookieKey)) {
+    //         document.cookie = `${cookieKey}=; expires=${new Date(0).toUTCString()}`;
 
-            cookieCard.remove();
+    //         cookieCard.remove();
 
-            // Affichage de la notification
-            displayMessage('deleted', cookieKey);
-        }
-    })
+    //         // Affichage de la notification
+    //         displayMessage('deleted', cookieKey);
+    //     }
+    // })
 }
 
 const messagesContainer = document.querySelector('.messages-container');
 
 function displayMessage(message, cookieName) {
 
-    const msgBox = document.createElement('div');
+    const msgBox = document.createElement('p');
     msgBox.className = "message-box";
 
     switch (message) {
