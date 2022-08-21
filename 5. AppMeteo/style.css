@@ -68,8 +68,21 @@ img {
   font-size: 14px;
   margin-inline: 3px;
   border: 2px solid rgb(202, 194, 194);
+  color: rgb(202, 194, 194);
   border-radius: 5px;
   background-color: #fff;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+}
+
+.btn:hover {
+  border: 2px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+}
+
+button.active {
+  border: 2px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 .forecast-results {
@@ -78,6 +91,13 @@ img {
   justify-content: center;
   flex-wrap: wrap;
   margin: 30px 0;
+}
+
+.forecast-hour-results,
+.forecast-day-results {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .forecast-hour-item,

@@ -1,4 +1,6 @@
 
+const forecastResults = document.querySelector("div.forecast-results");
+
 // Localisation
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(data => {
@@ -32,6 +34,9 @@ async function getOpenWeatherData(lat, lon) {
 
         displayCurrent(data);
         displayHourly(data);
+        displayDaily(data);
+
+        forecastResults.lastElementChild.style.display = "none";
 
     } catch (error) {
         console.log(error);
@@ -54,12 +59,12 @@ function displayCurrent(data) {
 }
 
 function displayHourly(data) {
-    const hourly = data.hourly.slice(0, 23);
-    console.log(hourly);
+    const hourly = data.hourly.slice(1, 23);
+
+    const forecastHourResults = document.createElement('div');
+    forecastHourResults.className = "forecast-hour-results";
 
     hourly.forEach((hour) => {
-
-        const forecastResults = document.querySelector("div.forecast-results");
 
         let hourOfTheDay = new Date(hour.dt * 1000);
 
@@ -78,7 +83,64 @@ function displayHourly(data) {
 
             forecastHourItem.appendChild(title);
             forecastHourItem.appendChild(value);
-            forecastResults.appendChild(forecastHourItem);
+            forecastHourResults.appendChild(forecastHourItem);
+            forecastResults.appendChild(forecastHourResults);
         }
     })
 }
+
+function displayDaily(data) {
+    const daily = data.daily.slice(1, 8);
+    const weekDays = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+    const forecastDayResults = document.createElement('div');
+    forecastDayResults.className = "forecast-day-results";
+
+    daily.forEach((day => {
+
+        let currentDay = new Date(day.dt * 1000).getUTCDay();
+
+        const forecastDayItem = document.createElement('div');
+        forecastDayItem.className = "forecast-day-item";
+
+        const title = document.createElement('p');
+        title.className = "item-title";
+        title.textContent = `${weekDays[currentDay].slice(0, 3)}`;
+
+        const value = document.createElement('p');
+        value.className = "item-value";
+        value.textContent = `${day.temp.day.toFixed(1)}`;
+
+        forecastDayItem.appendChild(title);
+        forecastDayItem.appendChild(value);
+        forecastDayResults.appendChild(forecastDayItem);
+        forecastResults.appendChild(forecastDayResults);
+    }))
+}
+
+const btnHourly = document.querySelector('.btn-hourly');
+const btnDaily = document.querySelector('.btn-daily');
+
+const forecastHourResults = document.querySelector('.forecast-hour-results');
+const forecastDayResults = document.querySelector('.forecast-day-results');
+
+btnHourly.addEventListener('click', () => {
+
+    const forecastHourResults = document.querySelector('.forecast-hour-results');
+    const forecastDayResults = document.querySelector('.forecast-day-results');
+
+    forecastDayResults.style.display = "none";
+    forecastHourResults.style.display = "flex";
+    btnDaily.classList.remove('active');
+    btnHourly.classList.add('active');
+})
+
+btnDaily.addEventListener('click', () => {
+
+    const forecastHourResults = document.querySelector('.forecast-hour-results');
+    const forecastDayResults = document.querySelector('.forecast-day-results');
+
+    forecastHourResults.style.display = "none";
+    forecastDayResults.style.display = "flex";
+    btnHourly.classList.remove('active');
+    btnDaily.classList.add('active');
+})
