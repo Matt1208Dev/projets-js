@@ -1,20 +1,67 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AppMétéo</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    
-    <script src="main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AppMétéo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="app">
+    <h1>Application <span>météo</span></h1>
+    <div class="img-box">
+      <img class="weather-pic" src="./ressources/jour/02d.svg" alt="">
+    </div>
+    <p class="temperature">30°C</p>
+    <p class="location">Paris, FR</p>
+    <div class="forecast">
+      <div class="btn-container">
+        <button class="btn btn-hourly" type="button">Heures</button>
+        <button class="btn btn-daily type=" button">Prévisions</button>
+      </div>
+      <div class="forecast-results">
+        <!-- <div class="forecast-item">
+          <p class="item-title">18h</p>
+          <p class="item-value">25</p>
+        </div>
+        <div class="forecast-item">
+          <p class="item-title">18h</p>
+          <p class="item-value">25</p>
+        </div>
+        <div class="forecast-item">
+          <p class="item-title">18h</p>
+          <p class="item-value">25</p>
+        </div>
+        <div class="forecast-item">
+          <p class="item-title">18h</p>
+          <p class="item-value">25</p>
+        </div>
+        <div class="forecast-item">
+          <p class="item-title">18h</p>
+          <p class="item-value">25</p>
+        </div>
+        <div class="forecast-item">
+          <p class="item-title">18h</p>
+          <p class="item-value">25</p>
+        </div>
+        <div class="forecast-item">
+          <p class="item-title">18h</p>
+          <p class="item-value">25</p>
+        </div> -->
+      </div>
+
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
 </html>
