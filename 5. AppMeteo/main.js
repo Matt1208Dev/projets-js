@@ -31,6 +31,7 @@ async function getOpenWeatherData(lat, lon) {
 
         const data = await results.json();
 
+        // Affichage des données
         displayCurrent(data);
         displayHourly(data);
         displayDaily(data);
@@ -44,22 +45,29 @@ async function getOpenWeatherData(lat, lon) {
     }
 }
 
+// Affichage de la météo en temps réel
 function displayCurrent(data) {
 
     const picture = document.querySelector('img');
     const temperature = document.querySelector('.temperature');
     const userLocation = document.querySelector('.location');
 
+    // Logo image
     const icon = data.current.weather[0].icon;
     if (icon.indexOf('n') !== -1) {
         picture.src = `./ressources/nuit/${icon}.svg`;
     } else {
         picture.src = `./ressources/jour/${icon}.svg`;
     }
+
+    // Affichage température
     temperature.textContent = `${data.current.temp.toFixed(1)}°C`;
+
+    // Affichage du fuseau horaire
     userLocation.textContent = `${data.timezone}`;
 }
 
+// Affichage des prévisions horaires
 function displayHourly(data) {
     const hourly = data.hourly.slice(1, 23);
 
@@ -72,6 +80,8 @@ function displayHourly(data) {
 
         // On affiche uniquement une prévision toutes les 3h.
         if (hourly.indexOf(hour) % 3 === 0 && hourly.indexOf(hour) !== 0) {
+
+            // Création des éléments, remplissage et rattachement au DOM
             const forecastHourItem = document.createElement('div');
             forecastHourItem.className = "forecast-hour-item";
 
@@ -91,6 +101,7 @@ function displayHourly(data) {
     })
 }
 
+// Affichage des prévisions journalières
 function displayDaily(data) {
     const daily = data.daily.slice(1, 8);
     const weekDays = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
@@ -101,6 +112,7 @@ function displayDaily(data) {
 
         let currentDay = new Date(day.dt * 1000).getUTCDay();
 
+        // Création des éléments, remplissage et rattachement au DOM
         const forecastDayItem = document.createElement('div');
         forecastDayItem.className = "forecast-day-item";
 
@@ -119,6 +131,7 @@ function displayDaily(data) {
     }))
 }
 
+// Gestion de l'affichage par onglet
 const btnHourly = document.querySelector('.btn-hourly');
 const btnDaily = document.querySelector('.btn-daily');
 
