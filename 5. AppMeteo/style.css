@@ -16,6 +16,7 @@ body {
 .app {
   background-image: url(./ressources/gradient.jpg);
   max-width: 400px;
+  min-height: 507px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -23,6 +24,7 @@ body {
   align-items: center;
   border-radius: 15px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
 }
 
 h1 {
@@ -65,10 +67,11 @@ img {
 
 .btn {
   padding: 3px 15px;
-  font-size: 14px;
+  font-size: 16px;
   margin-inline: 3px;
   border: 2px solid rgb(202, 194, 194);
   color: rgb(202, 194, 194);
+  font-family: Raleway, sans-serif;
   border-radius: 5px;
   background-color: #fff;
   cursor: pointer;
@@ -119,4 +122,55 @@ button.active {
 .forecast-hour-item:nth-last-child(-n+1),
 .forecast-day-item:nth-last-child(-n+1) {
   border-right: none;
+}
+
+/* Loader */
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  transition: visibility 0s 0.8s ease-out, opacity 0.4s 0.4s ease-out;
+}
+
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  background-color: #333;
+  border-radius: 50%;
+  margin-right: 5px;
+  animation: moveUp 0.3s alternate infinite;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes moveUp {
+  100% {
+    transform: translateY(-15px);
+  }
 }

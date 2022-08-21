@@ -16,46 +16,35 @@
 
 <body>
   <div class="app">
+
+    <!-- Loader -->
+    <div class="loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
     <h1>Application <span>météo</span></h1>
+
+    <!-- Image d'illustration  -->
     <div class="img-box">
       <img class="weather-pic" src="./ressources/jour/02d.svg" alt="">
     </div>
-    <p class="temperature">30°C</p>
-    <p class="location">Paris, FR</p>
+
+    <p class="temperature"></p>
+    <p class="location"></p>
+
+    <!-- Conteneur résultats -->
     <div class="forecast">
+
+      <!-- Boutons -->
       <div class="btn-container">
         <button class="btn btn-hourly active" type="button">Heures</button>
         <button class="btn btn-daily type=" button">Prévisions</button>
       </div>
+
       <div class="forecast-results">
-        <!-- <div class="forecast-item">
-          <p class="item-title">18h</p>
-          <p class="item-value">25</p>
-        </div>
-        <div class="forecast-item">
-          <p class="item-title">18h</p>
-          <p class="item-value">25</p>
-        </div>
-        <div class="forecast-item">
-          <p class="item-title">18h</p>
-          <p class="item-value">25</p>
-        </div>
-        <div class="forecast-item">
-          <p class="item-title">18h</p>
-          <p class="item-value">25</p>
-        </div>
-        <div class="forecast-item">
-          <p class="item-title">18h</p>
-          <p class="item-value">25</p>
-        </div>
-        <div class="forecast-item">
-          <p class="item-title">18h</p>
-          <p class="item-value">25</p>
-        </div>
-        <div class="forecast-item">
-          <p class="item-title">18h</p>
-          <p class="item-value">25</p>
-        </div> -->
+        <!-- Contenu dynamique -->
       </div>
 
     </div>

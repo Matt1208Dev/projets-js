@@ -1,4 +1,5 @@
 
+const loader = document.querySelector('.loader');
 const forecastResults = document.querySelector("div.forecast-results");
 
 // Localisation
@@ -8,7 +9,7 @@ if (navigator.geolocation) {
         const lon = data.coords.longitude;
         getOpenWeatherData(lat, lon);
     }, () => {
-        throw new Error("Vous avez refusé de partager votre géolocalisation. L'application ne peut être chargée. Recharger la page et autoriser le partage.");
+        loader.textContent = "Vous avez refusé de partager votre géolocalisation. L'application ne peut fonctionner correctement. Rechargez la page et autorisez le partage.";
     }
     )
 }
@@ -30,16 +31,16 @@ async function getOpenWeatherData(lat, lon) {
 
         const data = await results.json();
 
-        console.log(data);
-
         displayCurrent(data);
         displayHourly(data);
         displayDaily(data);
 
         forecastResults.lastElementChild.style.display = "none";
 
+        loader.classList.add('fade-out');
+
     } catch (error) {
-        console.log(error);
+        loader.textContent = error;
     }
 }
 
@@ -56,6 +57,7 @@ function displayCurrent(data) {
         picture.src = `./ressources/jour/${icon}.svg`;
     }
     temperature.textContent = `${data.current.temp.toFixed(1)}°C`;
+    userLocation.textContent = `${data.timezone}`;
 }
 
 function displayHourly(data) {
