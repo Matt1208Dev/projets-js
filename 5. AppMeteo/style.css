@@ -13,6 +13,7 @@ body {
   padding: clamp(20px, 5vw, 50px) 20px 10px;
 }
 
+/* Conteneur principal */
 .app {
   background-image: url(./ressources/gradient.jpg);
   max-width: 400px;
@@ -52,6 +53,7 @@ img {
   margin-bottom: 30px;
 }
 
+/* Conteneur résultats et boutons */
 .forecast {
   background-color: #fff;
   width: 100%;
@@ -59,6 +61,7 @@ img {
   border: 1px solid rgb(202, 194, 194);
 }
 
+/* Conteneur à boutons */
 .btn-container {
   width: 100%;
   text-align: center;
@@ -88,6 +91,7 @@ button.active {
   color: rgb(0, 0, 0);
 }
 
+/* Conteneur à résultats */
 .forecast-results {
   background-color: #fff;
   display: flex;
@@ -96,6 +100,7 @@ button.active {
   margin: 30px 0;
 }
 
+/* Conteneur dynamique prévisions heures/jours */
 .forecast-hour-results,
 .forecast-day-results {
   display: flex;
