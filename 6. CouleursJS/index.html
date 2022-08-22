@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Couleurs fun JavaScript</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div class="gradient-generator">
+        <div class="btn-box">
+            <input type="color" name="color-1" id="color-1">
+            <label class="color-label" for="color-1">#333</label>
+        </div>
+        <div class="btn-box">
+            <input type="color" name="color-2" id="color-2">
+            <label class="color-label" for="color-2">#333</label>
+        </div>
+        <p class="orientation-info">Orientation: 90°</p>
+        <input class="orientation-range" type="range" name="orientation" id="orientation" min="0" max="360" step="1" value="45">
+        <div class="btn-group">
+            <button class="btn btn-copy" type="button">Copier</button>
+            <button class="btn btn-random" type="button">Random</button>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>

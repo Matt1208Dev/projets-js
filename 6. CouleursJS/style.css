@@ -11,4 +11,65 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: #333;
   padding: clamp(20px, 20vw, 200px) 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.gradient-generator {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-box {
+  position: relative;
+}
+
+input[type="color"] {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #f1f1f1;
+  /* background-color: #333; */
+}
+
+.color-label {
+  color: #f1f1f1;
+  position: absolute;
+  top: 16px;
+  left: 15px;
+  font-weight: bold;
+}
+
+.orientation-info {
+  display: inline-block;
+  background-color: #f1f1f1;
+  padding: 5px;
+  margin: 10px 0;
+  border-radius: 3px;
+}
+
+.orientation-range {
+  display: block;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 16px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn:not(:last-of-type) {
+  margin-right: 10px;
 }
