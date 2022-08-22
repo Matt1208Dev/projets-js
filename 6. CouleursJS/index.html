@@ -10,20 +10,23 @@
 
 <body>
     <div class="gradient-generator">
-        <div class="btn-box">
-            <input type="color" name="color-1" id="color-1">
-            <label class="color-label" for="color-1">#333</label>
-        </div>
-        <div class="btn-box">
-            <input type="color" name="color-2" id="color-2">
-            <label class="color-label" for="color-2">#333</label>
-        </div>
-        <p class="orientation-info">Orientation: 90°</p>
-        <input class="orientation-range" type="range" name="orientation" id="orientation" min="0" max="360" step="1" value="45">
-        <div class="btn-group">
-            <button class="btn btn-copy" type="button">Copier</button>
-            <button class="btn btn-random" type="button">Random</button>
-        </div>
+        <form>
+            <div class="btn-box">
+                <input type="color" name="color-1" id="color-1" value="#0042aa">
+                <label class="color-label" id="color-2-label" for="color-1">#0042aa</label>
+            </div>
+            <div class="btn-box">
+                <input type="color" name="color-2" id="color-2" value="#3a88fe">
+                <label class="color-label" id="color-2-label" for="color-2">#3a88fe</label>
+            </div>
+            <p class="orientation-info" id="info">Orientation: 45°</p>
+            <input class="orientation-range" type="range" name="orientation" id="range" min="0" max="360" step="1"
+                value="45">
+            <div class="btn-group">
+                <button class="btn btn-copy" id="btn-copy" type="button">Copier</button>
+                <button class="btn btn-random" id="btn-random" type="button">Random</button>
+        </form>
+    </div>
     </div>
 
     <script src="app.js"></script>
