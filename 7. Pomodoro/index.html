@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pomodoro App</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;600;800&family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-  </head>
-  <body>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;600;800&family=Lato:wght@100;300;400;700;900&display=swap"
+    rel="stylesheet">
+</head>
 
-    <script src="app.js"></script>
-  </body>
+<body>
+  <div class="container">
+
+    <h1>Le <span>POMODORO</span></h1>
+
+    <div class="timer-container">
+
+      <div class="work-timer">
+        <h2>Travail</h2>
+        <p class="timer">30:00</p>
+      </div>
+
+      <div class="rest-timer">
+        <h2>Repos</h2>
+        <p class="timer">5:00</p>
+      </div>
+
+    </div>
+
+    <div class="btn-container">
+
+      <div class="img-box start">
+        <img class="btn btn-start" src="ressources/play.svg" alt="bouton départ">
+      </div>
+
+      <div class="img-box">
+        <img class="btn btn-reset" src="ressources/reset.svg" alt="bouton réinitialiser">
+      </div>
+
+    </div>
+    <p class="cycle-counter">Cycle(s) : 0</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
 </html>

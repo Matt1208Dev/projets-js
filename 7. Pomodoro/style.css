@@ -13,3 +13,76 @@ body {
   padding: clamp(20px, 5vw, 50px) 10px;
   color: #161616;
 }
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+
+h1 span {
+  font-weight: 700;
+  border-bottom: 1px solid #161616;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+.timer-container, .btn-container {
+  display: flex;
+}
+
+.work-timer, .rest-timer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  margin-inline: 3px;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.timer {
+  font-family: "Inconsolata", sans-serif;
+  font-size: 20px;
+  margin-top: 3px;
+}
+
+.btn-container {
+  position: relative;
+}
+
+.img-box {
+  flex-grow: 1;
+  margin-top: 30px;
+  margin-inline: 3px;
+}
+
+.img-box.start {
+  text-align: end;
+}
+
+.btn {
+  width: 50px;
+  height: auto;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.cycle-counter {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 700;
+}
