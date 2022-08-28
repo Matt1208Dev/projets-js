@@ -10,8 +10,8 @@ const workLoading = document.querySelector('.work-timer h2');
 const restLoading = document.querySelector('.rest-timer h2');
 
 const timerOptions = {
-    minutes: 00,
-    seconds: 05,
+    minutes: 30,
+    seconds: 0,
     timer: "work"
 }
 let pomodoro;
@@ -46,14 +46,14 @@ function launchTimer(timer, minutes, seconds) {
             if (timer === "work") {
                 work.innerText = formatTime(minutes, seconds);
                 timer = "rest";
-                minutes = 0;
-                seconds = 05;
+                minutes = 05;
+                seconds = 0;
             } else
                 // Quand le minuteur de 5min arrive à 00:00, on incrémente le compteur de cycle de 1.
                 if (timer === "rest") {
                     rest.innerText = formatTime(minutes, seconds);
-                    minutes = 00;
-                    seconds = 05;
+                    minutes = 30;
+                    seconds = 0;
                     timer = "work";
                     incrementCycle();
                 }
