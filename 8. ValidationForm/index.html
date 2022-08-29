@@ -13,7 +13,39 @@
     />
   </head>
   <body>
-   
+    <div class="container">
+      
+      <form action="#">
+        <h1>Inscrivez-vous.</h1>
+        
+        <div class="input-group">
+          <label for="username" class="input-label">Nom d'utilisateur</label>
+          <input type="text" name="username" id="username" placeholder="3 caractères minimum">
+          <p class="error"></p>
+        </div>
+
+        <div class="input-group">
+          <label for="email" class="input-label">Entrez votre email</label>
+          <input type="email" name="email" id="email" placeholder="Votre email">
+          <p class="error"></p>
+
+        </div>
+
+        <div class="input-group">
+          <label for="password" class="input-label">Mot de passe</label>
+          <input type="password" name="password" id="password" placeholder="Votre mot de passe">
+          <p class="password-info">Au moins un symbole, un chiffre ainsi que 6 caractères minimum</p>
+        </div>
+
+        <div class="input-group">
+          <label for="password-confirm" class="input-label">Confirmez le mot de passe</label>
+          <input type="password" name="password-confirm" id="password-confirm" placeholder="Confirmez le mot de passe" autocomplete="off">
+          <p class="error"></p>
+        </div>
+
+        <button class="btn" type="submit">Création du compte</button>
+      </form>
+    </div>
 
     <script src="app.js"></script>
   </body>
