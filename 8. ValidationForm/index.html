@@ -1,52 +1,81 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Validation</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="container">
-      
-      <form action="#">
-        <h1>Inscrivez-vous.</h1>
-        
-        <div class="input-group">
-          <label for="username" class="input-label">Nom d'utilisateur</label>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+
+    <form action="#">
+      <h1>Inscrivez-vous.</h1>
+
+      <div class="input-group">
+        <label for="username" class="input-label">Nom d'utilisateur</label>
+        <div>
           <input type="text" name="username" id="username" placeholder="3 caractères minimum">
-          <p class="error"></p>
+          <img class="i-status" src="ressources/check.svg" alt="icône validé">
         </div>
+        <p class="error"></p>
+      </div>
 
-        <div class="input-group">
-          <label for="email" class="input-label">Entrez votre email</label>
+      <div class="input-group">
+        <label for="email" class="input-label">Entrez votre email</label>
+        <div>
           <input type="email" name="email" id="email" placeholder="Votre email">
-          <p class="error"></p>
-
+          <img class="i-status" src="ressources/check.svg" alt="icône validé">
         </div>
+        <p class="error"></p>
 
-        <div class="input-group">
-          <label for="password" class="input-label">Mot de passe</label>
+      </div>
+
+      <div class="input-group">
+        <label for="password" class="input-label">Mot de passe</label>
+        <div>
           <input type="password" name="password" id="password" placeholder="Votre mot de passe">
-          <p class="password-info">Au moins un symbole, un chiffre ainsi que 6 caractères minimum</p>
+          <img class="i-status" src="ressources/check.svg" alt="icône validé">
         </div>
-
-        <div class="input-group">
-          <label for="password-confirm" class="input-label">Confirmez le mot de passe</label>
-          <input type="password" name="password-confirm" id="password-confirm" placeholder="Confirmez le mot de passe" autocomplete="off">
-          <p class="error"></p>
+        <p class="password-info">Au moins un symbole, un chiffre ainsi que 6 caractères minimum</p>
+        <div class="security">
+          <div class="security-level-box low">
+            <div class="security-low"></div>
+            <p class="security-info">Faible</p>
+          </div>
+          <div class="security-level-box mid">
+            <div class="security-mid"></div>
+            <p class="security-info">Moyen</p>
+          </div>
+          <div class="security-level-box high">
+            <div class="security-high"></div>
+            <p class="security-info">Fort</p>
+          </div>
         </div>
+      </div>
 
-        <button class="btn" type="submit">Création du compte</button>
-      </form>
-    </div>
+      <div class="input-group">
+        <label for="password-confirm" class="input-label">Confirmez le mot de passe</label>
+        <div>
+          <input type="password" name="password-confirm" id="password-confirm" placeholder="Confirmez le mot de passe"
+            autocomplete="off">
+          <img class="i-status" src="ressources/check.svg" alt="icône validé">
+        </div>
+        <p class="error"></p>
+      </div>
 
-    <script src="app.js"></script>
-  </body>
+      <button class="btn" type="submit" id="submit">Création du compte</button>
+    </form>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
 </html>

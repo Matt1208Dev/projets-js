@@ -40,15 +40,19 @@ form {
     margin-bottom: 25px;
 }
 
+.input-group div {
+    position: relative;
+}
+
 .input-group p {
     font-size: 13px;
     margin-top: 8px;
     color: #b4b4b4;
 }
 
-.error {
+p.error {
     font-size: 13px;
-    color: #d60000;
+    color: #cc0000;
 }
 
 input,
@@ -87,4 +91,49 @@ button {
     border-radius: 3px;
     margin-top: 10px;
     cursor: pointer;
+}
+
+.security {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.security-level-box {
+    width: 33%;
+    text-align: center;
+    padding-inline: 3px;
+}
+
+.security-low, .security-mid, .security-high {
+    margin-top: 10px;
+    height: 5px;
+    border-radius: 5px;
+}
+
+.security-low {
+    background-color: rgb(221, 137, 3);
+}
+
+.security-mid {
+    background-color: rgb(230, 196, 25);
+}
+
+.security-high {
+    background-color: rgb(21, 176, 4);
+}
+
+.low, .mid, .high {
+    display: none;
+}
+
+/* icônes de validation */
+.i-status {
+    width: 30px;
+    height: auto;
+    position: absolute;
+    display: none;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 3px;
 }
