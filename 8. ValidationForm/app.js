@@ -98,7 +98,13 @@ function checkPasswordSecurity(e) {
         passwordVerif = false;
     }
 
+    if(passwordConfirmVerif === true) {
+        passwordConfirmVerif = false;
+        passwordConfirm.value = "";
+    }
+
     handleStatusIcon(element, passwordVerif);
+    handleStatusIcon(passwordConfirm, passwordConfirmVerif);
 }
 
 // Contrôle du champ #password-confirm
