@@ -14,6 +14,99 @@ body {
   color: #f1f1f1;
 }
 
+h1 {
+  font-family: Raleway, sans-serif;
+  font-size: 50px;
+  font-weight: 200;
+  text-align: center;
+}
+
+h1 span {
+  font-weight: 800;
+}
+
+.text-info {
+  font-size: 20px;
+  text-align: center;
+  margin: 20px;
+}
+
+.score {
+  font-size: 16px;
+  text-align: center;
+  margin: 10px 10px 50px 10px;
+}
+
+.card-container {
+  display: grid;
+  max-width: 800px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.card {
+  aspect-ratio: 1/1;
+  border-radius: 3px;
+  cursor: pointer;
+  perspective: 1000px;
+  transition: transform 0.2s ease-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.double-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.face,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1;
+  pointer-events: none;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  transform: rotateY(180deg);
+}
+
+.back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /*Compatibilité imparfaite avec Safari 15.5, bug d'affichage sur mozilla 105.0b9 (64 bits)*/
+}
+
+.face { 
+  transform: rotateY(180deg);
+  transition: transform 0.3s;
+}
+
+img {
+  width: 60%;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Première version */
+/* 
 .container {
   margin: 0 auto;
   width: 650px;
@@ -34,9 +127,11 @@ h1 span {
   font-weight: 800;
 }
 
-img {
-  width: 100%;
+.picture {
+  position: absolute;
+  width: 50%;
   height: auto;
+  z-index: 0;
 }
 
 .text-info {
@@ -50,15 +145,24 @@ img {
 
 .card-container {
   width: 600px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  grid-template-rows: repeat(4, 140px);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
 }
 
 .card {
+  width: 140px;
+  height: 140px;
   background-color: #f1f1f1;
   padding: 30px;
   border-radius: 3px;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
-}
+  cursor: pointer;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+} */

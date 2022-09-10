@@ -1,36 +1,182 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memory game</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container">
-      <h1>Jeu des <span>cartes mémoires</span></h1>
-      <p class="text-info">Tentez de gagner avec le moins d'essais possible.</p>
-      <p class="counter">Nombre de coups : <span>0</span></p>
-      <div class="card-container">
-        <div class="card"><img src="ressources/question.svg" alt="icône point d'interrogation"></div>
-        <div class="card"><img src="ressources/question.svg" alt="icône point d'interrogation"></div>
-        <div class="card"><img src="ressources/question.svg" alt="icône point d'interrogation"></div>
-        <div class="card"><img src="ressources/question.svg" alt="icône point d'interrogation"></div>
-        <div class="card"><img src="ressources/question.svg" alt="icône point d'interrogation"></div>
-        <div class="card"><img src="ressources/question.svg" alt="icône point d'interrogation"></div>
-        <div class="card"><img src="ressources/question.svg" alt="icône point d'interrogation"></div>
-        <div class="card"><img src="ressources/question.svg" alt="icône point d'interrogation"></div>
-        <div class="card"><img src="ressources/question.svg" alt="icône point d'interrogation"></div>
-        <div class="card"><img src="ressources/question.svg" alt="icône point d'interrogation"></div>
-        <div class="card"><img src="ressources/question.svg" alt="icône point d'interrogation"></div>
-        <div class="card"><img src="ressources/question.svg" alt="icône point d'interrogation"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <h1>Jeux des <span>cartes mémoires</span></h1>
+  <p class="text-info">Tentez de gagner avec le moins d'essais possible.</p>
+  <p class="score">Nombre de coups : 0</p>
+
+  <div class="card-container">
+
+    <div class="card" data-fruit="apple">
+      <div class="double-face">
+        <div class="face">
+          <img src="ressources/apple.svg" alt="pomme">
+        </div>
+        <div class="back">
+          <img src="ressources/question.svg" alt="icône point d'interrogation">
+        </div>
       </div>
     </div>
 
+    <div class="card" data-fruit="apple">
+      <div class="double-face">
+        <div class="face">
+          <img src="ressources/apple.svg" alt="pomme">
+        </div>
+        <div class="back">
+          <img src="ressources/question.svg" alt="icône point d'interrogation">
+        </div>
+      </div>
+    </div>
 
-    <script src="app.js"></script>
-  </body>
+    <div class="card" data-fruit="banana">
+      <div class="double-face">
+        <div class="face">
+          <img src="ressources/banana.svg" alt="banane">
+        </div>
+        <div class="back">
+          <img src="ressources/question.svg" alt="icône point d'interrogation">
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-fruit="banana">
+      <div class="double-face">
+        <div class="face">
+          <img src="ressources/banana.svg" alt="banane">
+        </div>
+        <div class="back">
+          <img src="ressources/question.svg" alt="icône point d'interrogation">
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-fruit="brocoli">
+      <div class="double-face">
+        <div class="face">
+          <img src="ressources/brocoli.svg" alt="brocoli">
+        </div>
+        <div class="back">
+          <img src="ressources/question.svg" alt="icône point d'interrogation">
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-fruit="brocoli">
+      <div class="double-face">
+        <div class="face">
+          <img src="ressources/brocoli.svg" alt="brocoli">
+        </div>
+        <div class="back">
+          <img src="ressources/question.svg" alt="icône point d'interrogation">
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-fruit="cherry">
+      <div class="double-face">
+        <div class="face">
+          <img src="ressources/cherry.svg" alt="cerise">
+        </div>
+        <div class="back">
+          <img src="ressources/question.svg" alt="icône point d'interrogation">
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-fruit="cherry">
+      <div class="double-face">
+        <div class="face">
+          <img src="ressources/cherry.svg" alt="cerise">
+        </div>
+        <div class="back">
+          <img src="ressources/question.svg" alt="icône point d'interrogation">
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-fruit="pepper">
+      <div class="double-face">
+        <div class="face">
+          <img src="ressources/pepper.svg" alt="poivron">
+        </div>
+        <div class="back">
+          <img src="ressources/question.svg" alt="icône point d'interrogation">
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-fruit="pepper">
+      <div class="double-face">
+        <div class="face">
+          <img src="ressources/pepper.svg" alt="poivron">
+        </div>
+        <div class="back">
+          <img src="ressources/question.svg" alt="icône point d'interrogation">
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-fruit="straw">
+      <div class="double-face">
+        <div class="face">
+          <img src="ressources/straw.svg" alt="fraise">
+        </div>
+        <div class="back">
+          <img src="ressources/question.svg" alt="icône point d'interrogation">
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-fruit="straw">
+      <div class="double-face">
+        <div class="face">
+          <img src="ressources/straw.svg" alt="fraise">
+        </div>
+        <div class="back">
+          <img src="ressources/question.svg" alt="icône point d'interrogation">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Première version de l'HTML -->
+  <!-- <div class="container">
+    <h1>Jeu des <span>cartes mémoires</span></h1>
+    <p class="text-info">Tentez de gagner avec le moins d'essais possible.</p>
+    <p class="counter">Nombre de coups : <span>0</span></p>
+    <div class="card-container">
+      <div class="card"><img class="picture" src="ressources/question.svg" alt="icône point d'interrogation"></div>
+      <div class="card"><img class="picture" src="ressources/question.svg" alt="icône point d'interrogation"></div>
+      <div class="card"><img class="picture" src="ressources/question.svg" alt="icône point d'interrogation"></div>
+      <div class="card"><img class="picture" src="ressources/question.svg" alt="icône point d'interrogation"></div>
+      <div class="card"><img class="picture" src="ressources/question.svg" alt="icône point d'interrogation"></div>
+      <div class="card"><img class="picture" src="ressources/question.svg" alt="icône point d'interrogation"></div>
+      <div class="card"><img class="picture" src="ressources/question.svg" alt="icône point d'interrogation"></div>
+      <div class="card"><img class="picture" src="ressources/question.svg" alt="icône point d'interrogation"></div>
+      <div class="card"><img class="picture" src="ressources/question.svg" alt="icône point d'interrogation"></div>
+      <div class="card"><img class="picture" src="ressources/question.svg" alt="icône point d'interrogation"></div>
+      <div class="card"><img class="picture" src="ressources/question.svg" alt="icône point d'interrogation"></div>
+      <div class="card"><img class="picture" src="ressources/question.svg" alt="icône point d'interrogation"></div>
+    </div>
+  </div> -->
+
+  <script src="app.js"></script>
+</body>
+
 </html>
