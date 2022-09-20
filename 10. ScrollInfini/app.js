@@ -1,16 +1,14 @@
-const APILocation = "https://api.unsplash.com/";
-const randomPhotoEndpoint = "photos/random";
+const randomPhotoURL = "https://api.unsplash.com/photos/random?count=30";
 const accessKey = "DCQrlw8LnEaIbBv0lEXebJ3REtV97mI5rvT0k0_jRNQ";
-const searchByKeywordEndpoint = "search/photos";
-const searchInput = document.querySelector('form');
-const resultsContainer = document.querySelector('.results');
-const form = document.querySelector('form');
-const msgError = document.querySelector('.error');
 const query = {
     keyword: "",
     prevKeyword: "",
     page: 1
 }
+const searchInput = document.querySelector('form');
+const resultsContainer = document.querySelector('.results');
+const form = document.querySelector('form');
+const msgError = document.querySelector('.error');
 const infiniteScroll = document.querySelector('#infinite-scroll');
 let errorLock = false;
 
@@ -29,16 +27,23 @@ function handleForm(e) {
     query.keyword = e.target[0].value;
     // On "vide" la grille de résultats
     resultsContainer.innerHTML = "";
+
+    errorLock = false;
+
+    // Si on soumet un champ vide, on appelle la fonction "random" 
+    if (!query.keyword) {
+        getAPIData(randomPhotoURL);
+        return;
+    }
     // On envoie la requête à l'API Unsplash
-    getPhotosByKeyword();
+    getAPIData(`https://api.unsplash.com/search/photos?query=${query.keyword}&page=${query.page}&per_page=30`);
 }
 
-// Affichage de photos aléatoires
-async function getUnsplashAPIRandomData() {
+async function getAPIData(url) {
 
     try {
         // Requête à l'API
-        const response = await fetch(`${APILocation}${randomPhotoEndpoint}?count=30&orientation=landscape&client_id=${accessKey}`);
+        const response = await fetch(`${url}&client_id=${accessKey}`);
 
         if (!response.ok) {
             throw new Error(`Erreur: ${response.status}`);
@@ -47,7 +52,11 @@ async function getUnsplashAPIRandomData() {
         const data = await response.json();
 
         // Affichage des résultats
-        showResults(data);
+        if (data.results) {
+            showResults(data.results);
+        } else {
+            showResults(data);
+        }
 
     } catch (error) {
         console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
@@ -55,37 +64,9 @@ async function getUnsplashAPIRandomData() {
 }
 
 // Appel de la fonction d'affichage aléatoire au chargement de la page
-window.onload = getUnsplashAPIRandomData();
+window.onload = getAPIData(randomPhotoURL);
 
-// Recherche par mot-clé
-async function getPhotosByKeyword() {
-
-    errorLock = false;
-
-    // Si on soumet un champ vide, on appelle la fonction "random" 
-    if (!query.keyword) {
-        getUnsplashAPIRandomData();
-        return;
-    }
-
-    try {
-        // Requête à l'API
-        const response = await fetch(`${APILocation}${searchByKeywordEndpoint}?query=${query.keyword}&page=${query.page}&per_page=30&client_id=${accessKey}`);
-
-        if (!response.ok) {
-            throw new Error(`Erreur: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        // Affichage des résultats
-        showResults(data.results);
-
-    } catch (error) {
-        console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
-    }
-}
-
+// Affichage des images dans la grille des résultats
 function showResults(data) {
 
     // Verrou empéchant l'affichage d'un second message d'erreur, déclenché par le fetch de l'Observeur
@@ -95,7 +76,7 @@ function showResults(data) {
 
     // Message d'erreur si pas de résultat
     if (data.length === 0 || !data) {
-        msgError.textContent = "Oups ! Votre recherche ne retourne aucun résultat.";
+        msgError.textContent = "Oups ! La recherche ne retourne aucun résultat.";
         errorLock = true;
         return;
     } else {
@@ -124,7 +105,11 @@ let observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             query.page++;
-            getPhotosByKeyword();
+            if (query.keyword) {
+                getAPIData(`https://api.unsplash.com/search/photos?query=${query.keyword}&page=${query.page}&per_page=30`);
+            } else {
+                getAPIData(randomPhotoURL);
+            }
         }
     })
 }, options);
