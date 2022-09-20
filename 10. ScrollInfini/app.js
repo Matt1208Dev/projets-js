@@ -1,5 +1,5 @@
 const randomPhotoURL = "https://api.unsplash.com/photos/random?count=30";
-const accessKey = "DCQrlw8LnEaIbBv0lEXebJ3REtV97mI5rvT0k0_jRNQ";
+const accessKey = "";   // API key
 const query = {
     keyword: "",
     prevKeyword: "",
