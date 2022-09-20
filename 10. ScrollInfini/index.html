@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scroll Infini</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
 
-    <script src="app.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll Infini</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Titre principal -->
+    <h1 id="title">Clone <span>Unsplash</span></h1>
+
+    <!-- Barre de recherche -->
+    <form action="#">
+      <div class="input-group">
+        <label class="input-label" for="search-input">Votre recherche</label>
+        <input class="input" type="text" name="search-input" id="search-input">
+      </div>
+    </form>
+
+    <!-- Message d'erreur -->
+    <p class="error"></p>
+
+    <!-- Grille de résultats -->
+    <div class="results"></div>
+
+    <!-- Élément d'observation du scroll -->
+    <div id="infinite-scroll"></div>
+  </div>
+
+  <!-- Bouton de retour en haut de page -->
+  <a href="#title">
+    <div class="to-top" title="Retour en haut">
+      <img src="images/arrow.svg" alt="Flèche vers le haut" role="button">
+    </div>
+  </a>
+
+  <script src="app.js"></script>
+</body>
+
 </html>

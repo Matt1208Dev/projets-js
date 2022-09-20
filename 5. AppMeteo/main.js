@@ -17,7 +17,7 @@ if (navigator.geolocation) {
 // Appel à l'API OpenWeather
 async function getOpenWeatherData(lat, lon) {
     // Clé d'API
-    const appId = "42185c0f84f31c69b7b2765aee80ba1b";
+    const appId = ""; /* À compléter avec une clé d'API valide */
     // Paramètre(s) de requête non désiré(s)
     let part = "minutely";
 
