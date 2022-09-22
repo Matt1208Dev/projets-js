@@ -1,16 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slider JS</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    
-    
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slider JS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="slider">
+
+    <div class="arrow-button" id="previous">
+      <img src="ressources/left-chevron.svg" title="Précédent" alt="chevron gauche">
+    </div>
+    <div class="slider-items-box">
+      <div class="slider-item active">
+        <img src="ressources/cat-1.jpg" alt="chat">
+        <h3>Slide 1</h3>
+        <h4>Subtitle</h4>
+        <button>Subscribe now</button>
+      </div>
+
+      <div class="slider-item">
+        <img src="ressources/cat-2.jpg" alt="chat">
+        <h3>Slide 2</h3>
+        <h4>Subtitle</h4>
+        <button>Subscribe now</button>
+      </div>
+
+      <div class="slider-item">
+        <img src="ressources/cat-3.jpg" alt="chat">
+        <h3>Slide 3</h3>
+        <h4>Subtitle</h4>
+        <button>Subscribe now</button>
+      </div>
+    </div>
+
+    <div class="arrow-button" id="next">
+      <img src="ressources/right-chevron.svg" title="Suivant" alt="chevron droite">
+    </div>
+
+  </div>
 
 
-    <script src="app.js"></script>
-  </body>
+
+  <script src="app.js"></script>
+</body>
+
 </html>
