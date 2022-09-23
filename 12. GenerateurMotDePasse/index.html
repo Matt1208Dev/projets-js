@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Strong Password</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-   
 
-    <script src="app.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strong Password</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>Votre mot de passe</h1>
+
+    <div class="result">
+      <div class="password">ioqzrgherncmrc,qzc</div>
+      <div class="btn-copy">
+        <img src="ressources/copy.svg" alt="bouton de copie du mot de passe" title="Copier">
+      </div>
+    </div>
+
+    <form action="#">
+      <div class="input-group">
+        <label for="pwd-length">Taille du mot de passe : <span>10</span></label>
+        <input type="range" name="pwd-length" id="pwd-length" step="1" min="6" max="20" value="10">
+      </div>
+
+      <div class="checkbox-group">
+        <input class="checkbox-input" type="checkbox" name="lowcase" id="lowcase">
+        <label class="checkbox-label" for="lowcase">Contient des caractères minuscules</label>
+      </div>
+
+      <div class="checkbox-group">
+        <input class="checkbox-input" type="checkbox" name="uppercase" id="uppercase">
+        <label class="checkbox-label" for="uppercase">Contient des caractères majuscules</label>
+      </div>
+
+      <div class="checkbox-group">
+        <input class="checkbox-input" type="checkbox" name="numbers" id="numbers">
+        <label class="checkbox-label" for="numbers">Contient des nombres</label>
+      </div>
+
+      <div class="checkbox-group">
+        <input class="checkbox-input" type="checkbox" name="special-char" id="special-char">
+        <label class="checkbox-label" for="special-char">Contient des symboles spéciaux</label>
+      </div>
+
+      <button role="submit">Générer</button>
+    </form>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
 </html>

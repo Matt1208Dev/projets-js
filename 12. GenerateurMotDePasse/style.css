@@ -9,6 +9,87 @@
 body {
   min-height: 100vh;
   font-family: Open sans, Helvetica, sans-serif;
-  background: #111;
+  background: #063969;
   padding: clamp(20px, 5vw, 50px) 10px 10px;
+  color: #f1f1f1;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.password {
+  width: 100%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+  margin-inline-end: 10px;
+}
+
+.btn-copy {
+  width: 40px;
+  height: 40px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.btn-copy img {
+  width: 100%;
+  height: auto;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.checkbox-group {
+  margin-block: 10px;
+}
+
+.checkbox-label {
+  font-size: 14px;
+  font-weight: 300;
+  margin-inline-start: 10px;
+  vertical-align: middle;
+}
+
+button {
+  font-size: 16px;
+  background-color: #063969;
+  color: #f1f1f1;
+  border: none;
+  border: 1px solid #f1f1f1;
+  border-radius: 2px;
+  padding: 8px 30px;
+  display: block;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: all 200ms ease-out;
+}
+
+button:hover {
+  background-color: #f1f1f1;
+  color: #063969;
 }
