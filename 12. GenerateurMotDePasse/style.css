@@ -25,6 +25,7 @@ h1 {
   margin-bottom: 10px;
 }
 
+/* Affichage du résultat */
 .result {
   display: flex;
   justify-content: space-between;
@@ -34,38 +35,70 @@ h1 {
 .password {
   width: 100%;
   font-size: 18px;
+  letter-spacing: 1px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #f1f1f1;
   margin-inline-end: 10px;
 }
 
+/* Bouton de copie */
 .btn-copy {
   width: 40px;
   height: 40px;
   background-color: #f1f1f1;
   padding: 10px;
   border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn-copy:hover {
+  background-color: #d9d8d8;
 }
 
 .btn-copy img {
   width: 100%;
   height: auto;
+  pointer-events: none;
 }
 
-.input-group {
+/* Toast info */
+.btn-copy::before {
+  content : "Copié! ✅";
+  position: absolute;
+  white-space: nowrap;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f1f1f1;
+  color: #063969;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  display: none;
+}
+
+.btn-copy.active::before {
+  display: block;
+}
+
+/* Input range */
+.range-group {
   display: flex;
   flex-direction: column;
 }
 
-.input-group label {
+.range-group label {
   font-weight: 400;
   font-size: 14px;
   margin-bottom: 10px;
 }
 
+/* Checkboxes */
 .checkbox-group {
   margin-block: 10px;
+
 }
 
 .checkbox-label {
@@ -73,8 +106,10 @@ h1 {
   font-weight: 300;
   margin-inline-start: 10px;
   vertical-align: middle;
+  cursor: pointer;
 }
 
+/* Bouton générer */
 button {
   font-size: 16px;
   background-color: #063969;
@@ -92,4 +127,9 @@ button {
 button:hover {
   background-color: #f1f1f1;
   color: #063969;
+}
+
+/* Message d'erreur */
+.error {
+  text-align: center;
 }

@@ -18,22 +18,25 @@
 
     <h1>Votre mot de passe</h1>
 
+    <!-- Affichage mot de passe -->
     <div class="result">
-      <div class="password">ioqzrgherncmrc,qzc</div>
+      <div class="password"></div>
       <div class="btn-copy">
         <img src="ressources/copy.svg" alt="bouton de copie du mot de passe" title="Copier">
       </div>
     </div>
 
+    <!-- Sélecteur de longueur -->
     <form action="#">
-      <div class="input-group">
-        <label for="pwd-length">Taille du mot de passe : <span>10</span></label>
+      <div class="range-group">
+        <label class="range-group-label" for="pwd-length">Taille du mot de passe : <span>10</span></label>
         <input type="range" name="pwd-length" id="pwd-length" step="1" min="6" max="20" value="10">
       </div>
 
+      <!-- Options -->
       <div class="checkbox-group">
-        <input class="checkbox-input" type="checkbox" name="lowcase" id="lowcase">
-        <label class="checkbox-label" for="lowcase">Contient des caractères minuscules</label>
+        <input class="checkbox-input" type="checkbox" name="lowercase" id="lowercase">
+        <label class="checkbox-label" for="lowercase">Contient des caractères minuscules</label>
       </div>
 
       <div class="checkbox-group">
@@ -47,13 +50,16 @@
       </div>
 
       <div class="checkbox-group">
-        <input class="checkbox-input" type="checkbox" name="special-char" id="special-char">
-        <label class="checkbox-label" for="special-char">Contient des symboles spéciaux</label>
+        <input class="checkbox-input" type="checkbox" name="specials" id="specials">
+        <label class="checkbox-label" for="specials">Contient des symboles spéciaux</label>
       </div>
 
+      <!-- Bouton de soumission Générer -->
       <button role="submit">Générer</button>
     </form>
 
+    <!-- Message d'erreur -->
+    <p class="error"></p>
   </div>
 
   <script src="app.js"></script>
