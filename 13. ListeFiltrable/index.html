@@ -14,7 +14,72 @@
     />
   </head>
   <body>
-    
+
+    <div class="side-nav">
+      <nav>
+      <div class="logo-box">
+        <img src="images/logo.svg" alt="logo Users">
+        <a href="#">Users</a>
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li>
+            <div class="box-link">
+              <div class="box-link-logo">
+                <img src="images/dashboard.svg" alt="icone tableau de bord">
+              </div>
+              <a class="nav-link" href="#">Dashboard</a>
+            </div>
+          </li>
+          <li>
+            <div class="box-link">
+              <div class="box-link-logo">
+                <img src="images/speech-bubble.svg" alt="icone message">
+              </div>
+              <a class="nav-link" href="#">Messenger</a>
+            </div>
+          </li>
+          <li>
+            <div class="box-link active">
+              <div class="box-link-logo">
+                <img src="images/server.svg" alt="icone serveur">
+              </div>
+              <a class="nav-link" href="#">Database</a>
+            </div>
+          </li>
+          <li>
+            <div class="box-link">
+              <div class="box-link-logo">
+                <img src="images/calendar.svg" alt="icone calendrier">
+              </div>
+              <a class="nav-link" href="#">Calendar</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    </div>
+
+    <div class="content">
+      <!-- Champ de recherche -->
+      <div class="input-box">
+        <div class="box-img">
+          <img src="images/search.svg" alt="icone loupe">
+        </div>
+        <input type="text" placeholder="Search for an user">
+      </div>
+
+      <h2>Database Results</h2>
+
+      <div class="results">
+        <div class="user-card">
+          <div class="user-identity"></div>
+          <div class="user-mail"></div>
+          <div class="user-phone"></div>
+        </div>
+      </div>
+
+    </div>
 
     <script src="script.js"></script>
   </body>
