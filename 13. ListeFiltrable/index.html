@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recherche d'utilisateurs</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
 
-    <div class="side-nav">
-      <nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recherche d'utilisateurs</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <div class="side-nav">
+    <nav>
       <div class="logo-box">
         <img src="images/logo.svg" alt="logo Users">
         <a href="#">Users</a>
@@ -58,29 +59,36 @@
         </ul>
       </div>
     </nav>
+  </div>
+
+  <div class="content">
+    <!-- Champ de recherche -->
+    <div class="input-box">
+      <div class="box-img">
+        <img src="images/search.svg" alt="icone loupe">
+      </div>
+      <input type="text" placeholder="Search for an user">
     </div>
 
-    <div class="content">
-      <!-- Champ de recherche -->
-      <div class="input-box">
-        <div class="box-img">
-          <img src="images/search.svg" alt="icone loupe">
-        </div>
-        <input type="text" placeholder="Search for an user">
-      </div>
+    <h2>Database Results</h2>
 
-      <h2>Database Results</h2>
+    <div class="results">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
 
-      <div class="results">
-        <div class="user-card">
-          <div class="user-identity"></div>
-          <div class="user-mail"></div>
-          <div class="user-phone"></div>
-        </div>
-      </div>
-
+        </tbody>
+      </table>
     </div>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>
