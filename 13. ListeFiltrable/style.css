@@ -12,10 +12,12 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-h2 {
+h1 {
+  font-size: 24px;
   margin-block: 30px;
 }
 
+/* Navigation latérale */
 .side-nav {
   position: fixed;
   top: 0;
@@ -73,15 +75,15 @@ a {
   font-weight: 500;
 }
 
+/* Conteneur principal */
 .content {
-  position: fixed;
-  top: 0;
-  left: 250px;
+  margin-left: 250px;
   width: calc(100vw - 250px);
-  height: 100vh;
+  min-height: 100vh;
   padding-inline: 40px;
 }
 
+/* Champ de recherche */
 .input-box {
   display: flex;
   align-items: center;
@@ -117,6 +119,7 @@ input:focus {
   box-shadow: 0 0 0 2pt #2dc861;
 }
 
+/* Résultats */
 .profile-pic {
   border-radius: 50%;
   width: 40px;
@@ -129,27 +132,39 @@ input:focus {
   flex-direction: column;
 }
 
-.results table {
-  table-layout: auto;
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding: 5px 10px;
-  text-align: start;
-}
-
-tbody tr:nth-of-type(2n+1) {
-  background-color: #f0f9f6;
-}
-
 .user-card {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.table-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.table-head>* {
+  flex-basis: 100%;
+}
+
+.table-body {
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.card:nth-of-type(even) {
+  background-color: #f0f9f6;
+}
+
+.card>* {
+  flex-basis: 100%;
 }
 
 .user-identity {
@@ -160,8 +175,57 @@ tbody tr:nth-of-type(2n+1) {
   padding: 5px;
 }
 
-.user-identity,
-.user-mail,
-.user-phone {
-  flex: 1 1 150px;
+/* Message d'erreur */
+.error {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+  .content {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 10px;
+  }
+
+  .side-nav,
+  .table-head {
+    display: none;
+  }
+
+  .card {
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f5f5f7;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .user-identity,
+  .user-email,
+  .user-phone {
+    padding-block: 10px;
+  }
+}
+
+@media screen and (max-width: 1099px) {
+  .card {
+    background-color: #f5f5f7 !important;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .content {
+    width: 100%;
+  }
 }

@@ -15,7 +15,7 @@
 </head>
 
 <body>
-
+  <!-- Navbar latérale -->
   <div class="side-nav">
     <nav>
       <div class="logo-box">
@@ -61,7 +61,7 @@
     </nav>
   </div>
 
-  <div class="content">
+  <main class="content">
     <!-- Champ de recherche -->
     <div class="input-box">
       <div class="box-img">
@@ -70,23 +70,18 @@
       <input type="text" placeholder="Search for an user">
     </div>
 
-    <h2>Database Results</h2>
+    <h1>Database Results</h1>
 
     <div class="results">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-          </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
+      <div class="table-head">
+        <div>Name</div>
+        <div>Email</div>
+        <div>Phone</div>
+      </div>
+      <!-- Résultats intégrés via JS -->
     </div>
-  </div>
+    <p class="error"></p>
+  </main>
 
   <script src="script.js"></script>
 </body>
