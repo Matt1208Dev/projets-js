@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +10,39 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
+    <h1>Lecteur <span>personnalisé.</span></h1>
+
+    <!-- Video Container -->
+    <figure id="videoContainer">
+        <!-- Video -->
+        <video id="video" controls preload="metadata" poster="ressources/test.jpg" width="600">
+            <source src="ressources/video.mp4" />
+        </video>
+        <!-- Controls -->
+        <div class="controls">
+            <ul id="video-controls">
+                <li class="progress">
+                    <progress id="progress" value="0" min="0">
+                        <span id="progress-bar"></span>
+                    </progress>
+                <li><img src="ressources/play.svg" id="playpause" type="button"></li>
+                </li>
+                <li><img src="ressources/unmute.svg" id="mute" type="button"></li>
+                <li><input class="volume" type="range" name="vol-bar" id="vol-bar"></li>
+                <li><span class="time">0:00 0:00</span></li>
+                <li class="full-screen"><img src="ressources/fullscreen.svg" id="fs" type="button"></li>
+            </ul>
+        </div>
+    </figure>
 
     <script src="app.js"></script>
 </body>
+
 </html>
