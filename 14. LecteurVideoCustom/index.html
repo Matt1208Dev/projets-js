@@ -16,31 +16,51 @@
 </head>
 
 <body>
+    <!-- Conteneur principal -->
+    <main class="container">
+        <!-- Titre -->
+        <h1>Lecteur <span>personnalisé.</span></h1>
 
-    <h1>Lecteur <span>personnalisé.</span></h1>
-
-    <!-- Video Container -->
-    <figure id="videoContainer">
-        <!-- Video -->
-        <video id="video" controls preload="metadata" poster="ressources/test.jpg" width="600">
-            <source src="ressources/video.mp4" />
-        </video>
-        <!-- Controls -->
-        <div class="controls">
-            <ul id="video-controls">
-                <li class="progress">
-                    <progress id="progress" value="0" min="0">
-                        <span id="progress-bar"></span>
-                    </progress>
-                <li><img src="ressources/play.svg" id="playpause" type="button"></li>
-                </li>
-                <li><img src="ressources/unmute.svg" id="mute" type="button"></li>
-                <li><input class="volume" type="range" name="vol-bar" id="vol-bar"></li>
-                <li><span class="time">0:00 0:00</span></li>
-                <li class="full-screen"><img src="ressources/fullscreen.svg" id="fs" type="button"></li>
-            </ul>
+        <!-- Video Container -->
+        <div id="videoContainer">
+            <!-- Video -->
+            <video id="video" preload="metadata">
+                <source src="ressources/video.mp4" />
+            </video>
+            <!-- Controls -->
+            <div class="controls">
+                <!-- Progress-bar -->
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+                <!-- Boutons de contrôle -->
+                <div class="controls-container">
+                    <!-- Play/pause -->
+                    <button>
+                        <img src="ressources/play.svg" id="play-pause" type="button" alt="icône lecture/pause"
+                            title="Lecture/pause">
+                    </button>
+                    <!-- Mute -->
+                    <button>
+                        <img src="ressources/unmute.svg" id="mute" type="button" alt="icône mute"
+                            title="couper/activer le son">
+                    </button>
+                    <!-- Volume -->
+                    <input class="volume" type="range" name="vol-bar" id="vol-bar" min="0" max="1" step="0.1" value="1"
+                        title="Ajuster le volume">
+                    <!-- Affichage du temps -->
+                    <p>
+                        <span id="time" title="durée écoulée / durée totale">00:00:00 / 00:00:00</span>
+                    </p>
+                    <!-- Plein écran -->
+                    <button class="full-screen">
+                        <img src="ressources/fullscreen.svg" id="full-screen" type="button" alt="icône plein écran"
+                            title="Plein écran">
+                    </button>
+                </div>
+            </div>
         </div>
-    </figure>
+    </main>
 
     <script src="app.js"></script>
 </body>

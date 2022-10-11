@@ -10,9 +10,11 @@ body {
   font-family: Montserrat, sans-serif;
   background: #d1d1d1;
   padding-top: 50px;
+  color: #f1f1f1;
 }
 
 h1 {
+  color: #000;
   text-align: center;
   margin-bottom: 50px;
   font-weight: 500;
@@ -22,63 +24,93 @@ h1 span {
   font-weight: 200;
 }
 
-figure {
-  max-width: 600px;
+/* Conteneur principal */
+.container {
+  max-width: 800px;
   height: auto;
   margin: 0 auto;
+}
+
+/* Vidéo */
+#videoContainer {
+  width: 100%;
   background-color: #000;
-}
-
-.video {
-  width: 100%;
-}
-
-.controls {
-  width: 100%;
+  overflow: hidden;
   position: relative;
-  background-color: rgb(72, 72, 72);
-  color: #f1f1f1;
 }
 
-ul {
-  list-style-type: none;
-  padding-top: 10px;
+/* Problème d'affichage constaté sur Safari après transition, la barre de contrôle disparaît. Lié à l'overflow ?*/
+
+#videoContainer:hover .controls {
+  transform: translateY(0%);
+}
+
+video:-webkit-full-screen {
+  width: 100%;
+  height: auto;
+}
+
+#video {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Contrôle de la vidéo */
+.controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #484848;
+  transform: translateY(calc(100% - 8px));
+  transition: all 0.2s ease-out;
+}
+
+.controls-container {
+  width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: row;
-  justify-content: flex-start;
-  position: relative;
 }
 
-li img, li input, li span {
+button {
+  border: none;
+  background-color: transparent;
+  color: #fff;
   padding: 10px;
 }
 
-li img {
-  width: 40px;
-  height: 40px;
+button img {
+  width: 20px;
+  height: 20px;
 }
 
-#progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-appearance: none;
-   appearance: none;
+button, input, .progress {
+  cursor: pointer;
+}
+
+#time {
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  cursor: default;
+  padding: 10px;
+}
+
+/* Progress-bar */
+.progress {
   width: 100%;
-  height: 6px;
+  background-color: #484848;
+  height: 8px;
+  border-bottom: 1px solid #000;
 }
 
-#progress::-webkit-progress-bar {
-  background-color: #000;
-}
-
-#progress::-webkit-progress-value {
+.progress-bar {
+  height: 100%;
   background-color: rgb(171, 12, 12);
+  transform-origin: 0;
+  transform: scaleX(0);
 }
 
 .full-screen {
-  position: absolute;
-  top: 10px;
-  right: 0px;
+  margin-left: auto;
 }
