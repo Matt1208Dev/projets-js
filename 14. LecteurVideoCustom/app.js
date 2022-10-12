@@ -54,6 +54,10 @@ function handleVolume(e) {
 // Remplissage de la barre de progression
 video.addEventListener('timeupdate', manageTime);
 
+// Affichage de la durée de la vidéo au chargement de la page
+window.addEventListener('load', manageTime);
+video.addEventListener('loadedmetadata', manageTime);
+
 // Gestion du temps
 function manageTime() {
     fillProgressBar();
