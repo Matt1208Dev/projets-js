@@ -10,3 +10,56 @@ body {
     color: #f1f1f1;
     padding: clamp(20px, 5vw, 50px) 10px 10px;
 }
+
+h1 {
+    font-size: 38px;
+    font-family: Montserrat, serif;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 span {
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.morpion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 3px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cell {
+    background-color: #070f29;
+    padding: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-xmark {
+    font-size: 110px;
+    color: #f1f1f1;
+}
+
+.fa-circle {
+    font-size: 75px;
+    color: #f1f1f1;
+}
+
+.info-txt {
+    font-size: 20px;
+}
