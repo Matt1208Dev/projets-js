@@ -11,8 +11,9 @@ body {
     padding: clamp(20px, 5vw, 50px) 10px 10px;
 }
 
+/* Titre */
 h1 {
-    font-size: 38px;
+    font-size: 46px;
     font-family: Montserrat, serif;
     text-align: center;
     margin-bottom: 50px;
@@ -24,6 +25,7 @@ h1 span {
     font-size: 18px;
 }
 
+/* Grille de jeu */
 .morpion {
     display: flex;
     flex-direction: column;
@@ -34,8 +36,8 @@ h1 span {
 .grid {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 150px);
-    grid-template-rows: repeat(3, 150px);
+    grid-template-columns: repeat(3, minmax(100px, 150px));
+    grid-template-rows: repeat(3, minmax(100px, 150px));
     gap: 3px;
     margin-bottom: 50px;
     border-radius: 10px;
@@ -48,6 +50,12 @@ h1 span {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+/* Icônes */
+i {
+    pointer-events: none;
 }
 
 .fa-xmark {
@@ -60,6 +68,8 @@ h1 span {
     color: #f1f1f1;
 }
 
+/* Message d'information */
 .info-txt {
     font-size: 20px;
+    text-align: center;
 }
