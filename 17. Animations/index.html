@@ -1,20 +1,116 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Florilège d'animations</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-   
-    <script src="app.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Florilège d'animations</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <header class="home">
+
+    <nav>
+      <div class="navbar">
+        <div class="nav-link">
+          <a href="#">Home</a>
+        </div>
+        <div class="nav-link">
+          <a href="#">Services</a>
+        </div>
+        <div class="nav-link">
+          <a href="#">Features</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1 class="hero-title">Porsche, set free.<span class="caret"></span></h1>
+      <p class="hero-txt">Lorem ipsum dolor sit amet.</p>
+      <a href="#main-content">
+        <div class="down-arrow-btn" title="Descendre">
+          <img src="ressources/down-arrow.svg" alt="Flèche vers le bas" role="button">
+        </div>
+      </a>
+    </div>
+
+  </header>
+
+  <main id="main-content">
+    <section class="sect-experience">
+      <header class="sect-header">
+        <h2>Feel the <span>road</span></h2>
+        <p>Start today</p>
+      </header>
+      <div class="sect-experience-content">
+        <div class="sect-experience-content-txt">
+          <h3>You've never experienced that.</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit beatae eius molestias laudantium eum
+            consequuntur animi quidem, nam commodi labore illo inventore in autem ipsum blanditiis sapiente ad alias
+            eligendi.
+            Est explicabo odio veniam incidunt officia facilis eius hic nesciunt id natus, voluptas commodi! Ipsum
+            recusandae cupiditate dolorem delectus quo suscipit, ipsa laboriosam quia fuga veniam officiis, debitis
+            minima
+            earum.
+          </p>
+          <button>Contact Us <img src="ressources/right-chevron.svg" alt="Bouton de contact"></button>
+        </div>
+        <div class="sect-experience-content-img">
+          <img src="ressources/vertical-porsche.jpg" alt="">
+        </div>
+      </div>
+    </section>
+    <section class="sect-models">
+      <header class="sect-header">
+        <h2>Browse the models</h2>
+        <p>Pick your favorite</p>
+      </header>
+      <div class="sect-content">
+        <div class="sect-models-content">
+          <div class="sect-models-content-txt">
+            <h3>Cayman.</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores dicta itaque dolorum esse, quas
+              culpa!</p>
+          </div>
+          <div class="sect-models-content-img">
+            <img src="ressources/side-1.jpg" alt="Porsche Cayman">
+          </div>
+        </div>
+
+        <div class="sect-models-content img-left">
+          <div class="sect-models-content-txt">
+            <h3>Panamera.</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores dicta itaque dolorum esse, quas
+              culpa!</p>
+          </div>
+          <div class="sect-models-content-img">
+            <img src="ressources/side-2.jpg" alt="Porsche Panamera">
+          </div>
+        </div>
+
+        <div class="sect-models-content">
+          <div class="sect-models-content-txt">
+            <h3>The 911.</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores dicta itaque dolorum esse, quas
+              culpa!</p>
+          </div>
+          <div class="sect-models-content-img">
+            <img src="ressources/side-3.jpg" alt="Porsche 911">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
 </html>

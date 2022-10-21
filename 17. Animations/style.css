@@ -6,8 +6,239 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: Montserrat, Helvetica, sans-serif;
   background: #111;
+  color: #f1f1f1;
+}
+
+main {
+  padding: 0 50px 10px 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-inline: 1px solid #9a9a9a;
+}
+
+header, .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  padding-top: 50px;
+}
+
+.home {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("ressources/hero-porsche.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.nav-link a {
+  color: #f1f1f1;
+  text-decoration: none;
+  margin: 10px;
+  position: relative;
+}
+
+.nav-link a:after {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  content: "";
+  height: 1px;
+  width: 33%;
+  background-color: #9a9a9a;
+  transition: width 0.4s ease-out;
+  
+}
+
+.nav-link a:hover:after {
+  width: 100%;
+}
+
+.hero {
+  margin-top: 50px;
+}
+
+.hero-title {
+  font-size: 50px;
+  text-transform: uppercase;
+  text-align: center;
+  background: linear-gradient(90deg, #9a9a9a, #fefefe);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.caret {
+  height: auto;
+  border: 1px solid #f1f1f1;
+  margin-inline: 4px;
+  border-radius: 1px;
+  opacity: 1;
+  animation: caret 0.6s ease-in-out 0s infinite alternate;
+}
+
+@keyframes caret {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.hero-txt {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.down-arrow-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #9a9a9a;
+  border-radius: 50%;
+  padding: 10px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sect-experience-content, .sect-content-models {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.sect-experience-content-txt, .sect-experience-content-img {
+  font-family: Raleway, sans-serif;
+  padding-inline: 30px;
+  flex: 1 1 300px;
+}
+
+.sect-header h2 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 200;
+}
+
+.sect-header span {
+  font-weight: 800;
+}
+
+.sect-header {
+  margin-block: 0 50px;
+}
+
+button {
+  font-size: 16px;
+  color: #f1f1f1;
+  display: block;
+  width: 50%;
+  padding: 8px 15px;
+  margin-block: 50px;
+  text-align: left;
+  background-color: transparent;
+  border: 1px solid #9a9a9a;
+  position: relative;
+  margin-right: 10px;
+}
+
+button img {
+  position: absolute;
+  right: 10px;
+  width: 16px;
+  height: auto;
+}
+
+h3 {
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.sect-experience-content-txt p,
+.sect-models-content-txt p {
+  color: #9a9a9a;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.sect-experience-content-img img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.sect-models-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-block: 70px;
+}
+
+.img-left {
+  flex-direction: row-reverse;
+}
+
+.sect-models-content-txt {
+  font-family: Raleway, sans-serif;
+  padding-inline: 15px;
+  flex: 1 1 200px;
+}
+
+.sect-models-content-img {
+  flex: 2 2 400px;
+}
+
+.sect-models-content-img img {
+  bottom: 0;
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  object-position: 50% 70%;
+}
+
+@media screen and (max-width: 450px) {
+  main {
+    padding-inline: 10px;
+  }
+
+  p {
+    margin-bottom: 30px;
+  }
+
+  button {
+    margin: 50px auto;
+  }
+
+  .sect-header {
+    margin-block: 0;
+  }
+
+  .sect-header h2 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
 }
