@@ -4,6 +4,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  cursor: none;
 }
 
 html {
@@ -16,14 +17,40 @@ body {
   color: #f1f1f1;
 }
 
+/* Curseur personnalisé */
+.custom-cursor {
+  position: fixed;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #f0ebeb;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.custom-cursor:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  border: 1px solid #f1f1f1;
+}
+
 main {
   padding: 0 50px 10px 50px;
   max-width: 1000px;
   margin: 0 auto;
   border-inline: 1px solid #9a9a9a;
+  overflow: hidden;
 }
 
-header, .hero {
+header,
+.hero {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,6 +60,7 @@ section {
   padding-top: 50px;
 }
 
+/* Section Home */
 .home {
   height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("ressources/hero-porsche.jpg");
@@ -42,6 +70,7 @@ section {
   position: relative;
 }
 
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: center;
@@ -64,16 +93,24 @@ section {
   height: 1px;
   width: 33%;
   background-color: #9a9a9a;
-  transition: width 0.4s ease-out;
-  
+  transition: all 0.2s ease-out;
+
 }
 
 .nav-link a:hover:after {
   width: 100%;
+  background-color: #f1f1f1;
+
 }
 
+/* Hero */
 .hero {
   margin-top: 50px;
+}
+
+.hero-txt {
+  font-size: 14px;
+  font-weight: 200;
 }
 
 .hero-title {
@@ -84,6 +121,15 @@ section {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+.hero-subtitle {
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+.hero-subtitle.fade-in, .down-arrow-btn.fade-in {
+  opacity: 1;
 }
 
 .caret {
@@ -99,17 +145,13 @@ section {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
 }
 
-
-.hero-txt {
-  font-size: 14px;
-  font-weight: 200;
-}
-
+/* Flêche scroll */
 .down-arrow-btn {
   width: 40px;
   height: 40px;
@@ -120,16 +162,21 @@ section {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
 }
 
-.sect-experience-content, .sect-content-models {
+/* Styles généraux pour toutes les sections */
+.sect-experience-content,
+.sect-content-models {
   display: flex;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.sect-experience-content-txt, .sect-experience-content-img {
+.sect-experience-content-txt,
+.sect-experience-content-img {
   font-family: Raleway, sans-serif;
   padding-inline: 30px;
   flex: 1 1 300px;
@@ -149,11 +196,14 @@ section {
   margin-block: 0 50px;
 }
 
+/* Section Experience */
 button {
   font-size: 16px;
   color: #f1f1f1;
   display: block;
-  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  width: 55%;
   padding: 8px 15px;
   margin-block: 50px;
   text-align: left;
@@ -161,6 +211,7 @@ button {
   border: 1px solid #9a9a9a;
   position: relative;
   margin-right: 10px;
+  transition: all 0.6s ease-out;
 }
 
 button img {
@@ -170,9 +221,22 @@ button img {
   height: auto;
 }
 
+button:hover {
+  background-color: #4e4e4e;
+}
+
 h3 {
   font-weight: 300;
   margin-bottom: 30px;
+}
+
+.sect-experience-content {
+  opacity: 0;
+  transition: opacity 2s 0.1s ease-out;
+}
+
+.sect-experience-content.opacity-anim {
+  opacity: 1;
 }
 
 .sect-experience-content-txt p,
@@ -188,11 +252,24 @@ h3 {
   object-fit: cover;
 }
 
+/* Section Models */
 .sect-models-content {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-block: 70px;
+  transform: skewX(-25deg);
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+
+.sect-models-content:nth-child(2) {
+  transform: skewX(25deg);
+}
+
+.sect-models-content.slide-anim {
+  transform: skewX(0);
+  opacity: 1;
 }
 
 .img-left {
@@ -240,5 +317,12 @@ h3 {
 
   h3 {
     font-size: 26px;
+  }
+}
+
+/* Suppression du curseur perso sur écrans tactiles */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none;
   }
 }
