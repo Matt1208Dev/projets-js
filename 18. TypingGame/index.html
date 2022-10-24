@@ -14,7 +14,28 @@
     />
   </head>
   <body>
+    <!-- Conteneur principal -->
+    <main class="container">
+      <!-- Titre -->
+      <h1>Jeu de la frappe 🔥</h1>
+      <p class="instructions">Appuyez sur <span>"Échap"</span> pour lancer / relancer une partie.</p>
+      <!-- Informations de jeu -->
+      <div class="game-info">
+        <!-- Temps restant -->
+        <div class="btn">Temps <span class="time">60</span></div>
+        <!-- Score -->
+        <div class="btn">Score : <span class="score">0</span></div>
 
+      </div>
+
+      <textarea name="typing-area" id="typing-area" rows="10"></textarea>
+
+      <p class="quote-box">
+       <span class="arrow-right-icon">→</span>
+       <span class="quote">You must welcome change as the rule but not as your ruler.</span>
+      </p>
+
+    </main>
  
     <script src="app.js"></script>
   </body>

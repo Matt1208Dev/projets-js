@@ -7,11 +7,87 @@
 }
 
 body {
-  background: linear-gradient(
-    to right,
-    #f09819,
-    #edde5d
-  );
+  background: linear-gradient(to right,
+      #f09819,
+      #edde5d);
   font-family: Roboto, Helvetica, sans-serif;
   padding: 50px 10px;
+  color: #f1f1f1;
+}
+
+/* Conteneur principal */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 40px 140px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #111;
+  border-radius: 10px;
+}
+
+/* Titre */
+h1 {
+  padding-bottom: 10px;
+}
+
+/* Instructions */
+.instructions span {
+  background-color: #dc143c;
+  padding: 6px;
+}
+
+/* Infos */
+.game-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-block: 25px 70px;
+
+}
+
+/* boutons */
+.btn {
+  min-width: 100px;
+  padding: 10px 30px;
+  margin-inline: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  background: linear-gradient(#2e2e2e,#181818);
+  border-radius: 5px;
+}
+
+.btn:nth-child(2) {
+  background: linear-gradient(#181818, #2e2e2e);
+}
+
+/* Textarea */
+#typing-area {
+  width: 100%;
+  padding: 10px;
+  background-color: #111;
+  border: 2px solid #333;
+  color: #f1f1f1;
+  font-size: 24px;
+}
+
+#typing-area:focus {
+  outline: none;
+}
+
+.quote-box {
+  padding-top: 20px;
+  width: 100%;
+}
+
+.arrow-right-icon {
+  background-color: #0078d7;
+  padding: 5px;
+}
+
+.quote {
+  font-size: 24px;
+  padding-inline: 5px;
+  vertical-align: middle;
 }
