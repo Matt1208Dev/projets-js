@@ -1,18 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculatrice</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-  </head>
-  <body>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculatrice</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+</head>
 
+<body>
 
-    <script src="app.js"></script>
-  </body>
+  <h1>Calculator</h1>
+
+  <!-- Corps de la calculatrice -->
+  <div class="calculator">
+    <!-- Écran -->
+    <div class="display">
+      <span class="result">85+85.254+80.21</span>
+      <span class="entry">250.46</span>
+    </div>
+    <!-- Boutons -->
+    <div class="buttons">
+      <span id="clear" class="btn">C</span>
+      <span id="clear-entry" class="btn">CE</span>
+      <span id="plus" class="btn">+</span>
+      <span class="btn">7</span>
+      <span class="btn">8</span>
+      <span class="btn">9</span>
+      <span id="substract" class="btn">-</span>
+      <span class="btn">4</span>
+      <span class="btn">5</span>
+      <span class="btn">6</span>
+      <span id="multiply" class="btn">X</span>
+      <span class="btn">1</span>
+      <span class="btn">2</span>
+      <span class="btn">3</span>
+      <span id="divide" class="btn">/</span>
+      <span class="btn">0</span>
+      <span id="decimal" class="btn">.</span>
+      <span id="equal" class="btn">=</span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
 </html>
